@@ -1,5 +1,6 @@
 # Object file
 *.o
+example.cpp
 
 # Ada Library Information
 *.ali
