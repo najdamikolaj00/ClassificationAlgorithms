@@ -23,17 +23,17 @@ Reader::Reader(const char *eda_name, const char *emg_name) // constructor 2
             std::string value;
             std::string time;
 
-        while(getline(data_file_, time, ',') && getline(data_file_, value, '\n'))
+        while(getline(data_file_, value, ',') && getline(data_file_, time, '\n'))
             {
                 if (count != 0 && i == 0)
                 {
-                    eda_times_.push_back(stoi(time));
-                    eda_values_.push_back(stoi(value));
+                    eda_times_.push_back(stof(time));
+                    eda_values_.push_back(stof(value));
                 }
                 else if (count != 0 && i == 1)
                 {
-                    emg_times_.push_back(stoi(time));
-                    emg_values_.push_back(stoi(value));
+                    emg_times_.push_back(stof(time));
+                    emg_values_.push_back(stof(value));
                 }
                 count++;
             }    
